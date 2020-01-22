@@ -1,0 +1,31 @@
+.profileimgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.profileavatar {
+  width: 10%;
+  border-radius: 50%;
+}
+
+.profileform {
+  border: 3px solid white;
+}
+
+.profilecontainer {
+  padding: 16px;
+}
+
+.wholeform {
+  background-color: #CBD5CE;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: lightblue;
+}
+
+.profilestyle {
+  font-family: 'Arial Narrow bold', sans-serif;
+}

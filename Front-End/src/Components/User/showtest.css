@@ -1,0 +1,26 @@
+.Dashboardshowtest{
+
+}
+.useshowtest{
+background-color: whitesmoke;
+}
+.cardshowtest{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+  background-color: white;
+  transition: 0.3s;
+  width: 40%;
+  height: 40%;
+  padding: 50px;
+  position: relative;
+  display: inline-block;
+  position: relative;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.cardshowtest1{
+
+
+}
+.containershowtest{
+padding: 2px 16px;
+}

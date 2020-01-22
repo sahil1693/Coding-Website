@@ -1,0 +1,57 @@
+.log {
+   padding: 30px 40px;
+   margin-top: 40px;
+   border-radius: 40px 40px 40px 40px;
+   -webkit-box-shadow: -5px 2px 62px 8px rgb(88, 45, 241);
+   -moz-box-shadow: -5px 2px 62px 8px rgb(88, 45, 241);
+   box-shadow: -5px 2px 62px 8px rgb(88, 45, 241);
+}
+
+#img {
+   width: 150px;
+   margin: auto;
+}
+
+.h1 {
+   color: black;
+   text-align: center;
+   font-weight: bolder;
+   margin-top: -30px;
+}
+
+.label {
+   font-size: 20px;
+   color: white;
+   font-weight: bolder;
+}
+
+.button {
+   -webkit-box-shadow: -5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: -5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+   box-shadow: -5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+}
+
+.background {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   background-image: url('1.jpg');
+}
+
+.custom {
+   width: 100%!important;
+   height: 20vh!important;
+}
+
+.custom1 {
+   width: 100%!important;
+   height: 8vh!important;
+}
+
+.p {
+   font-size: 20px;
+   color: black;
+   font-weight: bolder;
+}

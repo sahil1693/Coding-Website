@@ -1,0 +1,58 @@
+.card11 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.199);
+  background-color: white;
+  transition: 0.3s;
+  width: 40%;
+  height: 40%;
+  padding: 50px;
+  position: relative;
+  display: inline-block;
+  position: relative;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.card11 .new-banner-svg {
+  position: absolute;
+  top: -30px;
+  right: 0px;
+}
+
+.container123 {
+  padding: 2px 16px;
+}
+
+.card12 {
+  padding: 1px 10px;
+}
+
+.use1 {
+  background-color: whitesmoke;
+}
+
+.Dashboard1 {
+  margin-left: 50px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.button3 {
+  font-size: 16px;
+}
+
+.new-banner-svg {
+  width: 100px;
+  height: 100px;
+}
+
+.button123 {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 13px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
