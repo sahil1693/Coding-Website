@@ -1,0 +1,22 @@
+Command to run and build docker images and container 
+apt-get install docker.io //install docker
+
+
+
+docker build -t --name compiler .
+
+docker run -it --name compiler compiler
+
+docker exec -it compiler commandname
+
+docker cp localpath compiler:/path 
+
+docker cp compiler:/path localpath
+
+docker ps //give current running container
+
+docker ps -a //give all container
+
+docker images //give docker images
+
+
