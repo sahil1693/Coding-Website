@@ -5,7 +5,7 @@ import "./contentfirst.css";
 export default class Contentfirst extends Component {
     render() {
         return <><div className="back">
-            <span className="title1">SackerRank</span>
+            <span className="title1">RoyalCoding</span>
             <span className="title2">For those who love technology</span>
             <span className="title2">For Codding and Test signup</span>
             <Link to='/signup'>

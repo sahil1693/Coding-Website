@@ -43,7 +43,6 @@ export default class Mcq extends Component {
             {this.state.que.map((a) =>
                 <div className="card" style={{ marginLeft: "35px" }}>
                     <div className="container">
-                            <h4>{a.questionname}</h4>
                         <img src={a.image} alt="mcq"></img><br></br>
                         <div className="card-details pmT" style={{ float: "left" }}>
                             <br></br>

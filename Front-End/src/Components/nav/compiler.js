@@ -170,10 +170,14 @@ export default class Compiler extends Component
         <input type="submit" value="Submit" id="submit" onClick={change}/></center>
         <br/>
         <span id="out"></span><br></br>
-        <img id="output1"style={{width:'10%',height:'10%'}} alt="testcases"></img>&nbsp;&nbsp;&nbsp;&nbsp;
-        <img id="output2"style={{width:'10%',height:'10%'}} alt="testcases"></img>&nbsp;&nbsp;&nbsp;&nbsp;
-        <img id="output3"style={{width:'10%',height:'10%'}} alt="testcases"></img>&nbsp;&nbsp;&nbsp;&nbsp;
-        <img id="output4" style={{width:'10%',height:'10%'}} alt="testcases"></img>&nbsp;&nbsp;&nbsp;&nbsp;
+        {/*eslint-disable-next-line*/}
+        <img id="output1"style={{width:'10%',height:'10%'}}></img>&nbsp;&nbsp;&nbsp;&nbsp;
+        {/*eslint-disable-next-line*/}
+        <img id="output2"style={{width:'10%',height:'10%'}}></img>&nbsp;&nbsp;&nbsp;&nbsp;
+        {/*eslint-disable-next-line*/}
+        <img id="output3"style={{width:'10%',height:'10%'}} ></img>&nbsp;&nbsp;&nbsp;&nbsp;
+        {/*eslint-disable-next-line*/}
+        <img id="output4" style={{width:'10%',height:'10%'}}></img>&nbsp;&nbsp;&nbsp;&nbsp;
         <br></br>
          <u><h3 style={{color:"blue"}}>Output</h3></u>
         <textarea cols="50" rows="7" id="output" name="output"></textarea>

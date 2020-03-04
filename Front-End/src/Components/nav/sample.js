@@ -26,7 +26,7 @@ export default class Sample extends Component {
             <Navbar></Navbar>
             <br></br>
             {this.state.que.map((a) =>
-                <div className="card" style={{ marginLeft: "35px" }}>
+                <div className="card col-md col-xs col-sm" style={{ marginLeft: "35px" }}>
                     <div className="container">
                         <a href={`/sample1/${a.questionname}`} params={{ question: a.questionname }}>
                             <h4>{a.questionname}</h4>
@@ -34,7 +34,7 @@ export default class Sample extends Component {
                         <div className="card-details pmT" style={{ float: "left" }}>
                             <span style={{ color: "blue" }}>{a.type},Solved Percentage-{a.per}</span>
                         </div>
-                        <div style={{ float: "left", marginLeft: "700px", marginTop: "-40px", innerWidth: "100px" }}>
+                        <div className="col-md col-xs col-sm" style={{ float: "left", marginLeft: "450px", marginTop: "-40px", innerWidth: "100px" }}>
                             <Link to={`/sample1/${a.questionname}`} params={{ question: a.questionname }}> <Button style={{ padding: "5px 60px" }} variant="outline-primary" size="lg">Solve</Button>
                             </Link>
                         </div>

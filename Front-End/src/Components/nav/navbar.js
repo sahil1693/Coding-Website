@@ -6,7 +6,7 @@ import "./navbar.css"
 export default class Navbar extends Component {
   render() {
     return <div><nav className="navbar navbar-expand-lg navbar-dark bg-custom-2">
-    <img id="img" src={ss1} alt="logo" className='gg' />&nbsp;&nbsp;<Link to="/" style={{color:"black"}}><h5><u>SackerRank</u></h5></Link>&nbsp;&nbsp;&nbsp;&nbsp;
+    <img id="img" src={ss1} alt="logo" className='gg' />&nbsp;&nbsp;<Link to="/" style={{color:"black"}}><h5><u>RoyalCoding</u></h5></Link>&nbsp;&nbsp;&nbsp;&nbsp;
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -29,9 +29,9 @@ export default class Navbar extends Component {
             <Link className="nav-link" to="/mcq">Sample Mcqs</Link>
           </li>
         </ul>
-        <Link className="btn btn-outline-danger my-2 my-sm-2" to="Login" >Login</Link>
+        <Link className="btn btn-outline-danger my-2 my-sm-2" to="/Login" >Login</Link>
         &nbsp;&nbsp;&nbsp;
-            <Link className="btn btn-outline-danger my-2 my-sm-2" to="Signup">Signup</Link>
+            <Link className="btn btn-outline-danger my-2 my-sm-2" to="/Signup">Signup</Link>
         &nbsp;&nbsp;&nbsp;
         </div>
     </nav>
