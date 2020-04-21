@@ -24,34 +24,57 @@ export default class User extends Component {
     this.state = {
       l,
       test:[],
-      passcode:''
+      passcode:'',
+      to:'test',
+      r:false,
+      contestName:''
     }
     this.change=this.change.bind(this);
+    this.handleclick=this.handleclick.bind(this);
   }
   change(e){
     this.setState({passcode:e.target.value});
+  }
+  handleclick(a){
+  
+  this.setState({contestName:a.contestName});
+  
+	var c = this.state.passcode;
+  	if(c=="12345")
+  	{
+  		this.setState({r:true});
+  	}
+  	else{
+  		this.setState({r:false});
+  	}  
+  	
   }
   render() {
     if (this.state.l === false) {
       return <Redirect to="/"></Redirect>
     }
-    return <div >
+    else if(this.state.r === true){
+    	return <Redirect to = {`/testSolve/${this.state.contestName}/${this.state.passcode}`}/>
+    }
+    return <div className ="showtestpage">
       <Nav/>
+      <div className="showcontest">
       {this.state.test.map((a) =>
-                <div class="card" style={{ marginLeft: "35px" }}>
-                    <div class="container">
-                            <h4>{a.contestName}</h4>
-                            <div class="card-details pmT" style={{ float: "left" }}>
-                            <span style={{ color: "blue" }}>Start time&nbsp;&nbsp;{a.startday}&nbsp;&nbsp;{a.starttime}&nbsp;&nbsp;&nbsp;&nbsp;End time&nbsp;&nbsp;{a.endday}&nbsp;{a.endtime} </span>
-                        </div>
-                        <div style={{ float: "left", marginLeft: "700px", marginTop: "-40px", innerWidth: "100px" }}>
-                          Passcode:<input type="text" id="passcode" value={this.state.value} onChange={this.change}></input>
-                            <Link to={`/testSolve/${a.contestName}/${this.state.passcode}`} params={{ contestName: a.contestName,passcode:this.state.passcode }}> <Button style={{ padding: "5px 60px" }} variant="outline-primary" size="lg">Start</Button>
-                            </Link><br/>
-                        </div>
+                <div className="card" style={{ marginLeft: "35px" , display:"flex",flexDirection:"row",padding:"1% 1% 2% 1%",margin:"2%"}}>
+                    <div className="container">
+                            <h4>Contest : {a.contestName}</h4>
+                            <div className="insidecontainer11" style={{ float: "left" }}>
+                           		 <span style={{ color: "blue" }}>Start : &nbsp;&nbsp;{a.startday}&nbsp;&nbsp;{a.starttime}&nbsp;&nbsp;&nbsp;&nbsp;End : &nbsp;&nbsp;{a.endday}&nbsp;{a.endtime} </span>
+                    		</div>
+               		 </div>
+               		 <div className="container1">
+                            <input type="text" placeholder="Enter the passcode" id="passcode" style={{width:"60%", height:"40%", margin : "8% 1% 1% 1%"}} value={this.state.value} onChange={this.change}></input>
+                             <Button style={{ padding: "5px 60px" }} onClick={()=>this.handleclick(a)} variant="outline-primary" size="lg">Start</Button>
+                            <br/>
                     </div>
                 </div>
             )}
+        </div>
             <Footer/>
     </div>
 

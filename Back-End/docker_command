@@ -19,4 +19,8 @@ docker ps -a //give all container
 
 docker images //give docker images
 
+docker rm container_id or container name (it get using docker ps -a)
+
+docker rmi image_name 
+
 

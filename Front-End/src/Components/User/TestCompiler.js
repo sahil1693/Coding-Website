@@ -1,14 +1,12 @@
 import React,{Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
-import a from './a.jpg'
-import b from "./b.jpg";
+import a from '../nav/a.jpg'
+import b from "../nav/b.jpg";
 import Axios from "axios";
 import "./compiler.css";
 import AceEditor from "react-ace";
-
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/theme-github";
-
 var key=true;
 var arr=[];
 function change()
@@ -51,26 +49,24 @@ export default class Compiler extends Component
   this.setState({value:e});
   }
   sample(){
-  let c=document.getElementById('sampleee').value==='C'?"#include<stdio.h>\nint main(){\nprintf(\"hello world\");\nreturn 0;\n}":document.getElementById('sampleee').value==='C++'?"#include<iostream>\nusing namespace std;\nint main(){\ncout<<\"hello world\";\nreturn 0;\n}":document.getElementById('sampleee').value==='Java'?"import java.util.*;\nclass Main{\npublic static void main(String args[]){\nSystem.out.println("+"hello world"+");\n}":"print('hello')";
+  let c=document.getElementById('sampleee').value==='C'?"#include<stdio.h>\nint main(){\nprintf(\"hello world\");\nreturn 0;\n}":document.getElementById('sampleee').value==='C++'?"#include<iostream>\nusing namespace std;\nint main(){\ncout<<\"hello world\";\nreturn 0;\n}":document.getElementById('sampleee').value==='Java'?"import java.util.*;\nclass Main{\npublic static void main(String args[]){\nSystem.out.println(\"hello world\");\n}}":"print('hello')";
     this.setState({value:c});
   }
   color(){
      this.setState({backgroundColor:document.getElementById('color').value});
      let c=document.getElementById('color').value==="black"?"white" :"black";
     this.setState({color:c});
-    console.log(this.state);
   }
   handleSubmit(e){
     e.preventDefault();
-    Axios.post('http://localhost:5000/Compiler',{type:key,questionname:this.props.questionname,code:this.state.value,input:e.target.input.value,lang:e.target.lang.value,inputRadio:e.target.inputRadio.value})
+    Axios.post('http://localhost:5000/TestCompiler',{type:key,questionname:this.props.questionname,contestName:this.props.contestName,code:this.state.value,input:e.target.input.value,lang:e.target.lang.value,inputRadio:e.target.inputRadio.value})
     .then((res) => {
     if(key){
         document.getElementById('output').innerHTML=res.data;
     }
-    else{
+    else{ 
       var fals=0;
       arr=[...res.data];
-      console.log(arr[0]);
       if(arr[0])
       {
          fals++;
@@ -107,6 +103,7 @@ export default class Compiler extends Component
       {
         document.getElementById('output4').setAttribute("src",b);
       }
+      this.props.questionmark(fals,this.props.no);
       document.getElementById("out").innerHTML="TestCase Pass- "+fals+"/4 ";
     }
 
@@ -130,7 +127,7 @@ export default class Compiler extends Component
         </select>&nbsp;
         <select id="color" onClick={this.color}>
           <option value="white">white</option>
-          <option value="whitesmoke">whitesmoke</option>
+          <option value="smoke">whitesmoke</option>
           <option value="black">black</option>  
           <option value="grey">grey</option>
         </select>&nbsp;
@@ -140,11 +137,6 @@ export default class Compiler extends Component
         <option value="18px">18</option>
         <option value="20px">20</option>
         <option value="22px">22</option>
-        <option value="24px">24</option>
-        <option value="26px">26</option>
-        <option value="28px">28</option>
-        <option value="30px">30</option>
-        <option value="32px">32</option>
         </select>
         </h5>
         </center>
@@ -170,13 +162,9 @@ export default class Compiler extends Component
         <input type="submit" value="Submit" id="submit" onClick={change}/></center>
         <br/>
         <span id="out"></span><br></br>
-        {/*eslint-disable-next-line*/}
-        <img id="output1"style={{width:'10%',height:'10%'}}></img>&nbsp;&nbsp;&nbsp;&nbsp;
-        {/*eslint-disable-next-line*/}
-        <img id="output2"style={{width:'10%',height:'10%'}}></img>&nbsp;&nbsp;&nbsp;&nbsp;
-        {/*eslint-disable-next-line*/}
-        <img id="output3"style={{width:'10%',height:'10%'}} ></img>&nbsp;&nbsp;&nbsp;&nbsp;
-        {/*eslint-disable-next-line*/}
+        <img id="output1" style={{width:'10%',height:'10%'}} ></img>&nbsp;&nbsp;&nbsp;&nbsp;
+        <img id="output2" style={{width:'10%',height:'10%'}} ></img>&nbsp;&nbsp;&nbsp;&nbsp;
+        <img id="output3" style={{width:'10%',height:'10%'}} ></img>&nbsp;&nbsp;&nbsp;&nbsp;
         <img id="output4" style={{width:'10%',height:'10%'}}></img>&nbsp;&nbsp;&nbsp;&nbsp;
         <br></br>
          <u><h3 style={{color:"blue"}}>Output</h3></u>

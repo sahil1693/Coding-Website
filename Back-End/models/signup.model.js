@@ -13,7 +13,9 @@ const signupSchema=new Schema({
     yearofcomplete:{ type:String},
     degree:{ type:String},
     branch:{ type:String},
-    address:{ type:String}
+    address:{ type:String},
+    timer:{type:String},
+    result:{contestName:Array,result:Array}
 })
 const Signup=mongoose.model('login',signupSchema);
 module.exports=Signup;

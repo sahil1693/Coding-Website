@@ -18,7 +18,8 @@ import Question from './User/Question';
 import QuestionSolve from './User/QuestionSolve'
 import createTest from "./test/createTest";
 import showtest from "./User/showtest";
-import showquestion from "./User/showquestion"
+import showquestion from "./User/showquestion";
+import OnlyQuestion from "./User/OnlyQuestion";
 export default class MainPage extends Component {
     render() {
         return <div>
@@ -42,6 +43,7 @@ export default class MainPage extends Component {
                 <Route exact path="/createTest" component={createTest}></Route>
                 <Route exact path="/test" component={showtest}/>
                 <Route exact path="/testSolve/:contestName/:passcode" component={showquestion}/>
+                <Route path="/testSolve/:contestName/:passcode/:question" component={OnlyQuestion}/>
             </Switch>
         </div>
     }

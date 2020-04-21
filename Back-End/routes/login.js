@@ -50,6 +50,21 @@ router.post('/profile',verifyToken,async (req,res)=>{
         }
       });
 });
+router.post('/timer',verifyToken,async(req,res)=>{
+	jwt.verify(req.body.token,"s",(err,authdata)=>{
+	
+		if(errr){
+			res.sendStatus(403);
+		}
+		else{
+		
+			res.json({
+			
+			})
+		}
+	})
+
+})
 router.put("/",async(req,res)=>{
     let found = await User.findOne({name:req.body.username});
     User.updateOne({"_id":found._id},{$set:req.body})

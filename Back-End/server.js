@@ -26,6 +26,7 @@ const forgot=require('./routes/forgot');
 const test=require("./routes/test")
 const userDetail=require("./routes/userDetail")
 const show=require("./routes/show");
+const testCompiler=require("./routes/TestCompiler");
 // app.use('/',express.static('public/build'));
 function verifyToken(req, res, next) {
     const bearerHeader = req.body.headers['authorization'];
@@ -46,6 +47,7 @@ app.use('/mcq',McqRouter);
 app.use('/signup',signupRouter);
 app.use('/forgot',forgot);
 app.use('/login',loginRouter);
+app.use('/TestCompiler',testCompiler);
 app.use("*",verifyToken,(req,res,next)=>
 {
 jwt.verify(req.token, 's', (err, authData) => {
