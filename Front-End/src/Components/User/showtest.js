@@ -38,16 +38,15 @@ export default class User extends Component {
   handleclick(a){
   
   this.setState({contestName:a.contestName});
-  
-	var c = this.state.passcode;
-  	if(c=="12345")
-  	{
-  		this.setState({r:true});
-  	}
-  	else{
-  		this.setState({r:false});
-  	}  
-  	
+  	const token = sessionStorage.getItem("token");
+    const auth={authorization:'bearer '+sessionStorage.getItem("token1")}
+    Axios.post("http://localhost:5000/show/checkPasscode",{headers:auth,passcode:this.state.passcode,contestName:this.state.contestName})
+    .then((res)=>{
+  			this.setState({r:true}); 
+    })
+    .catch((err)=>{
+    	this.setState({r:false});
+  	})
   }
   render() {
     if (this.state.l === false) {

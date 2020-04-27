@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
 import { Redirect} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './showquestion.css';
 import './user.css';
 import Nav from "./testnavbar"
 import Axios from "axios"
-import Compiler from "./TestCompiler";
 import Question from "./OnlyQuestion";
 import MCQ from "./OnlyMCQ";
 var qsequence=1,msequence=1;
@@ -44,6 +42,7 @@ export default class User extends Component {
   }
   questionmark(fals,no){
   	var a=[...this.state.question1];
+  	console.log(no);
   	a[no-1]=fals;
   	this.setState({question1:a});
   }
@@ -56,13 +55,13 @@ export default class User extends Component {
   submitMCQ(i){
  const c = document.getElementById("input").value;
  var d=[...this.state.MCQ];
- d.push(c);
+ d[i-1]=c;
     this.setState({MCQ:d});
   }
   
   selectQuestion( i,q){
   this.setState({question:i,mq:'false',no:q});
-}
+	}
 selectMCQ( i,s){
 
 	this.setState({mq:'true'});
@@ -78,9 +77,11 @@ selectMCQ( i,s){
 	})
 }
 	finishTest(){
+	console.log(this.state.MCQ);
+	console.log(this.state.question1);
 	const token = sessionStorage.getItem("token");
     const auth={authorization:'bearer '+sessionStorage.getItem("token1")}
-	Axios.post("http://localhost:5000/show/question/submit",{headers:auth,passcode:this.props.match.params.passcode, contestName:this.props.match.params.contestName,question:[...this.state.question1],MCQ:[...this.state.MCQ]})
+	Axios.post("http://localhost:5000/show/question/submit",{headers:auth,passcode:this.props.match.params.passcode, contestName:this.props.match.params.contestName,question:[...this.state.question1], MCQ:[...this.state.MCQ], name:sessionStorage.getItem("username")})
     .then((res)=>{
     	alert('test finish successfully');
     })

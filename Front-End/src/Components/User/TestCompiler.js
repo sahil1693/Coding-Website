@@ -103,6 +103,7 @@ export default class Compiler extends Component
       {
         document.getElementById('output4').setAttribute("src",b);
       }
+      console.log(this.props.no);
       this.props.questionmark(fals,this.props.no);
       document.getElementById("out").innerHTML="TestCase Pass- "+fals+"/4 ";
     }

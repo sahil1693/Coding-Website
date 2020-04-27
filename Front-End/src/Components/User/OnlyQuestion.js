@@ -12,7 +12,7 @@ export default class OnlyQuestion extends Component{
 		<h2> Solve the following Question</h2>
 		
 		<p>{this.props.question}</p>
-		<Compiler contestName={this.props.contestName} questionmark={this.props.questionmark} questionname={this.props.question}></Compiler>
+		<Compiler contestName={this.props.contestName} questionmark={this.props.questionmark} no={this.props.no} questionname={this.props.question}></Compiler>
 		</>
 	
 	}

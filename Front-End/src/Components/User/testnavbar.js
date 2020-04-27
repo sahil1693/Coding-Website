@@ -21,16 +21,12 @@ export default class Navbar extends Component {
       this.change();
     }
     change(){
-    console.log("timer start");
     	 this.timer = setInterval(() =>{
-    	 if(this.state.t===7200)
+    	 if(this.state.t===0)
     	 {
     	 	clearInterval(this.timer);
     	 }
-    	 console.log(this.state.t);
-    	 this.setState({
-      t:this.state.t+1
-    })
+    	 this.setState((prevState)=>({ t:prevState.t-1 }))
     this.setState({h:Math.floor(this.state.t/3600),m:Math.floor((this.state.t%3600)/60),s:this.state.t%60});
     }, 1000)
     
